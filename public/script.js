@@ -1,5 +1,6 @@
 const button = document.getElementById( "btn")
-const paragraph = document.getElementById( "prg");
+const paragraph = document.getElementById( "status");
+
 let timer;
 let interval;
 
@@ -7,12 +8,14 @@ button.addEventListener( "click", () => {
 	notifySMS();
 });
 
-const changeParagraph = ( text = "", withTimer = true) => {
+const changeParagraph = ( text = "", withTimer = true, status = "text-primary") => {
 	paragraph.innerText = text;
-	
+	paragraph.setAttribute( "class", status);
+
 	if( withTimer) {
 		timer = setTimeout( () => {
 			paragraph.innerText = "";
+			paragraph.setAttribute( "class", "");
 			timer = undefined;
 		}, 3000);
 	}
@@ -39,14 +42,14 @@ const notifySMS = () => {
 		url: "/notify-sms"
 	})
 	.then( () => {
-		changeParagraph( "Sent!");
+		changeParagraph( "Sent!", true, "text-success");
 	})
 	.catch( err => {
-		changeParagraph( `Failed, ${ err.message}`);
+		changeParagraph( `Failed, ${ err.message}`, true, "text-danger");
 		console.error( err);
 	})
 	.finally( () => {
 		clearInterval( interval);
 		interval = undefined;
-	})
-}
+	});
+};

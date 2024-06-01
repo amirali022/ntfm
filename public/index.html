@@ -3,12 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NOIFY ME</title>
+	<title>Notify Me!</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<button id="btn">Notiy Me!</button>
-	<p id="prg" style="color: crimson;"></p>
+	<div class="container m-2">
+		<button class="btn btn-primary btn-lg" id="btn">Notiy Me!</button>
+		<p id="status"></p>
+	</div>
 </body>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
 <script src="/static/js/axios.min.js"></script>
 <script src="/static/script.js"></script>
 </html>
