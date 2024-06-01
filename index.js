@@ -7,8 +7,12 @@ const authMiddleware = require( "./handlers/auth");
 const homeController = require( "./handlers/home");
 const notifySmsController = require( "./handlers/notifySms");
 const { notFound, errorHandler} = require( "./handlers/error");
+const isDev = require( "./utils/isDev");
 
 const app = express();
+
+if( !isDev())
+	app.set( "trust proxy", true)
 
 app.use( "/static", express.static( "./public"));
 
