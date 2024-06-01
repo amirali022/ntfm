@@ -1,13 +1,13 @@
 {
   "name": "notifme",
   "version": "1.0.0",
-  "description": "",
+  "description": "Notify Me | Send SMS Notifications to Me",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "A.A.K.",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.2",
