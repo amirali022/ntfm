@@ -4,5 +4,6 @@ const { LIMIT_WIN, LIMIT_CNT} = require( "../config");
 module.exports = rateLimit( {
 	windowMs: LIMIT_WIN,
 	limit: LIMIT_CNT,
-	message: "Too Many Requests!"
+	message: "Too Many Requests!",
+	validate: { trustProxy: false}
 });
